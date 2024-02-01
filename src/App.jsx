@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'
 import Prompt from './Prompt'
 import SlugRedirect from './SlugRedirect'
 
@@ -13,11 +13,9 @@ export const autoRedirectDelay = 3000; // we'll set this to 0 later
 // 2. then when you navigate to the webpage hit the pause button during the 2 second window
 // 3. The go to application tab > local storage and clear prev_classic_prompt
 
-export const subPage = ''; // we'll set this to '' once the custom domain is setup, also if you're running on localhost it should be ''
-
-export default () => <Router>
+export default () => <HashRouter> {/* https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/ */}
     <Routes>
-        <Route path={`${subPage}/`} element={<Prompt/>}/>
-        <Route path={`${subPage}/:slug`} element={<SlugRedirect/>}/>
+        <Route path='/' element={<Prompt/>}/>
+        <Route path='/:slug' element={<SlugRedirect/>}/>
     </Routes>
-</Router>
+</HashRouter>

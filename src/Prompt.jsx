@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import useLocalStorage from './useLocalStorage'
 import {Typography, Stack, Button, Dialog, Box, DialogContent} from '@mui/material';
-import { autoRedirectDelay, redirectDelay, targetDomains } from './App';
+import { autoRedirectDelay, redirectDelay, subPage, targetDomains } from './App';
 
 export default () => {
 
@@ -44,7 +44,7 @@ export default () => {
     return (
         <>
             <Box className="classicPageWrapper">
-                <iframe src='/classic_star_vote.html' style={{width: '100%', height: '100%'}} scrolling="no"></iframe>
+                <iframe src='/classic_star_vote.html' style={{width: '100%', height: '100%'}} scrolling="no"/>
             </Box>
             <Dialog open={true} className="classicPopupBkg" keepMounted>
                 <DialogContent sx={{margin: 4}}>
