@@ -41,11 +41,11 @@ export default () => {
         </p></div>
     }
 
-    const basename = document.querySelector('base')?.getAttribute('href') ?? '/' 
+    const basename = document.querySelector('base')?.getAttribute('href') ?? '';
     return (
         <>
             <Box className="classicPageWrapper">
-                <iframe src={`${basename}classic_star_vote.html`} style={{width: '100%', height: '100%'}} scrolling="no"/>
+                <iframe src={`${basename}/classic_star_vote.html`} style={{width: '100%', height: '100%'}} scrolling="no"/>
             </Box>
             <Dialog open={true} className="classicPopupBkg" keepMounted>
                 <DialogContent sx={{margin: 4}}>
