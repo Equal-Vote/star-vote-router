@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useLocalStorage from './useLocalStorage'
 import {Typography, Stack, Button, Dialog, Box, DialogContent} from '@mui/material';
+import { autoRedirectDelay, redirectDelay, targetDomains } from './App';
 
 export default () => {
 
@@ -9,7 +10,7 @@ export default () => {
     function goToOriginal(){
         setPrevClassicPrompt('classic')
 
-        window.location.href = 'https://classic.star.vote';
+        window.location.href = targetDomains.old;
     }
 
     function goToNewVersion(){
@@ -17,11 +18,13 @@ export default () => {
             setPrevClassicPrompt('new_version')
         }
 
-        //window.location.href = 'https://dev.star.vote';
+        window.location.href = targetDomains.new;
     }
 
     if(prevClassicPrompt == 'new_version'){
-        goToNewVersion();
+        setTimeout(() => {
+            goToNewVersion();
+        }, autoRedirectDelay);
         return <p>redirecting...</p>
     }
 
