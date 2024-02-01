@@ -1,8 +1,8 @@
 <html>
     <head>
         <script>
-            console.log('hi')
-            console.log(window.location.href)
+            let parts = window.location.href.split('/');
+            window.location.href = `star.vote/${parts[parts.length-1]}`;
         </script>
     </head>
     <body>
