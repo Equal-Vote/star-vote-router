@@ -24,13 +24,9 @@ export default (key, defaultValue, updateRate = null)  => {
         setStoredValue(newValue)
     }
 
-    useEffect(() => {
-        if (updateRate) {
-            const interval = setInterval(() => {
-                setStoredValue(getStoredValue(key, defaultValue))
-            }, updateRate);
-            return () => clearInterval(interval); //Cleanup function
-        }
-    }, [value])
-    return [value, setValue];
+    const getValue = () => {
+        return getStoredValue(key, defaultValue);
+    }
+
+    return [value, setValue, getValue];
 };

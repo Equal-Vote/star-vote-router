@@ -7,15 +7,17 @@ export const targetDomains = {
     new: 'http://dev.star.vote',
 };
 
-export const autoRedirectDelay = 2000; // we'll set this to 0 later
+export const autoRedirectDelay = 3000; // we'll set this to 0 later
 // to cancel the redirect and clear the cache do the following
 // 1. make sure the debug console is already open and on the sources tab
 // 2. then when you navigate to the webpage hit the pause button during the 2 second window
 // 3. The go to application tab > local storage and clear prev_classic_prompt
 
+export const subPage = ''; // we'll set this to '' once the custom domain is setup, also if you're running on localhost it should be ''
+
 export default () => <Router>
     <Routes>
-        <Route path='/' element={<Prompt/>}/>
-        <Route path='/:slug' element={<SlugRedirect/>}/>
+        <Route path={`${subPage}/`} element={<Prompt/>}/>
+        <Route path={`${subPage}/:slug`} element={<SlugRedirect/>}/>
     </Routes>
 </Router>

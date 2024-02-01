@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import useLocalStorage from './useLocalStorage'
 import {Typography, Stack, Button, Dialog, Box, DialogContent} from '@mui/material';
 import { autoRedirectDelay, redirectDelay, targetDomains } from './App';
 
 export default () => {
 
-    const [prevClassicPrompt, setPrevClassicPrompt] = useLocalStorage('prev_classic_prompt', '')
+    const [prevClassicPrompt, setPrevClassicPrompt, getPrevClassicPrompt] = useLocalStorage('prev_classic_prompt', '')
 
     function goToOriginal(){
         setPrevClassicPrompt('classic')
@@ -23,9 +23,22 @@ export default () => {
 
     if(prevClassicPrompt == 'new_version'){
         setTimeout(() => {
-            goToNewVersion();
+            if(getPrevClassicPrompt() != '') goToNewVersion();
         }, autoRedirectDelay);
-        return <p>redirecting...</p>
+
+        return <div style={{'margin': 40}}><p >
+            (temporary debug view)
+            <br/>
+            <br/>
+            redirecting...
+            <br/>
+            <br/>
+            <button onClick={() => {
+                setPrevClassicPrompt('')
+            }} style={{fontSize: 25}}>
+                reset?
+            </button>
+        </p></div>
     }
 
     return (
