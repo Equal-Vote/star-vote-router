@@ -3,8 +3,8 @@ import Prompt from './Prompt'
 import SlugRedirect from './SlugRedirect'
 
 export const targetDomains = {
-    old: 'http://star.vote',
-    new: 'http://dev.star.vote',
+    old: 'https://classic.star.vote',
+    new: 'https://bettervoting.com',
 };
 
 export const autoRedirectDelay = 3000; // we'll set this to 0 later
@@ -16,6 +16,7 @@ export const autoRedirectDelay = 3000; // we'll set this to 0 later
 export default () => <HashRouter> {/* https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/ */}
     <Routes>
         <Route path='/' element={<Prompt/>}/>
+        {/* this slug currently isn't used since github pages doesn't support it, instead 404.html is hacked to account for this */ }
         <Route path='/:slug' element={<SlugRedirect/>}/>
     </Routes>
 </HashRouter>
