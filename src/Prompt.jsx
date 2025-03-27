@@ -50,12 +50,19 @@ export default () => {
             <Dialog open={true} className="classicPopupBkg" keepMounted>
                 <DialogContent sx={{margin: 4}}>
                     <Stack className="classicPopupInner">
-                        <Typography align='center' variant='h4'>
+                        <Typography align='center' sx={{
+                            margin: '1rem 0px',
+                            fontFamily: 'Montserrat, Verdana, sans-serif',
+                            fontWeight: 400,
+                            fontSize: '1.25rem',
+                            lineHeight: 1.334,
+                            color: 'black',
+                        }}>
                             New star.vote is here!
                         </Typography>
                         <br/>
                         <Typography align='center'>
-                            The original star.vote has been moved to classic.star.vote, but the new and improved version is live!
+                            The original star.vote has been moved to classic.star.vote, but the new and improved version is live at BetterVoting.com!
                         </Typography>
                         <br/>
                         <Typography align='center'>
@@ -64,30 +71,42 @@ export default () => {
                         <br/>
                         <Button
                             variant="contained"
-                            sx={{
+                             sx={{
                                 width: '80%',
                                 m: 'auto',
+
                                 p: 1,
-                                boxShadow: 2,
-                                backgroundColor: '#2aa2b3',
+                                boxShadow: 0,
+                                backgroundColor: '#86C66A',
+                                fontFamily: 'Montserrat, Verdana, sans-serif',
                                 fontWeight: 'bold',
                                 fontSize: 18,
+                                color: 'primary.contrastText',
+                                '&:hover': {
+                                    backgroundColor: 'black',
+                                },
                             }}
                             onClick={goToNewVersion}
                         >
-                            Try the New Version!
+                            Try BetterVoting!
                         </Button>
                         <Button
                             variant="outlined"
-                            sx={{
+                             sx={{
                                 width: '70%',
                                 m: 'auto',
                                 mt: 2,
+
                                 p: 1,
-                                boxShadow: 2,
                                 fontWeight: 'bold',
-                                fontSize: 18,
-                                color: '#2aa2b3',
+                                fontSize: 16,
+                                color: 'var(--brand-pop)',
+                                borderColor: 'var(--brand-pop)',
+                                fontFamily: 'Montserrat, Verdana, sans-serif',
+                                '&:hover': {
+                                    color: 'black',
+                                    borderColor: 'black',
+                                },
                             }}
                             onClick={goToOriginal}
                         >
