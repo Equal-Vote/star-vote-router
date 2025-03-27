@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/star-vote-router/static/css/main.933bf714.css",
-    "main.js": "/star-vote-router/static/js/main.61df2c65.js",
+    "main.js": "/star-vote-router/static/js/main.cea850f8.js",
     "static/js/787.9cc87029.chunk.js": "/star-vote-router/static/js/787.9cc87029.chunk.js",
     "index.html": "/star-vote-router/index.html",
     "main.933bf714.css.map": "/star-vote-router/static/css/main.933bf714.css.map",
-    "main.61df2c65.js.map": "/star-vote-router/static/js/main.61df2c65.js.map",
+    "main.cea850f8.js.map": "/star-vote-router/static/js/main.cea850f8.js.map",
     "787.9cc87029.chunk.js.map": "/star-vote-router/static/js/787.9cc87029.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.933bf714.css",
-    "static/js/main.61df2c65.js"
+    "static/js/main.cea850f8.js"
   ]
 }
