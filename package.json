@@ -1,6 +1,6 @@
 {
   "name": "star-vote-router",
-  "homepage": "https://equal-vote.github.io/star-vote-router",
+  "homepage": "star.vote",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
