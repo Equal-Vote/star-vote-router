@@ -22,6 +22,9 @@ export default () => {
     }
 
     if(prevClassicPrompt == 'new_version'){
+        goToNewVersion();
+        return <></>
+
         setTimeout(() => {
             if(getPrevClassicPrompt() != '') goToNewVersion();
         }, autoRedirectDelay);
