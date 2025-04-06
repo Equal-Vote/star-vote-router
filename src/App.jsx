@@ -7,11 +7,9 @@ export const targetDomains = {
     new: 'https://bettervoting.com',
 };
 
-export const autoRedirectDelay = 3000; // we'll set this to 0 later
-// to cancel the redirect and clear the cache do the following
-// 1. make sure the debug console is already open and on the sources tab
-// 2. then when you navigate to the webpage hit the pause button during the 2 second window
-// 3. The go to application tab > local storage and clear prev_classic_prompt
+export const autoRedirectDelay = 0; // we'll set this to 0 later
+// to reset the autoredirect clear the browsing data for star.vote
+// https://superuser.com/questions/1787991/clear-browsing-history-from-specific-site-on-chrome
 
 export default () => <HashRouter> {/* https://www.freecodecamp.org/news/deploy-a-react-app-to-github-pages/ */}
     <Routes>
