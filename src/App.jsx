@@ -1,7 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, HashRouter} from 'react-router-dom'
-import { useParams } from "react-router";
-
+import { BrowserRouter as Router, Routes, Route, HashRouter } from 'react-router-dom'
 import Prompt from './Prompt'
+import SlugRedirect from './SlugRedirect'
 
 export const targetDomains = {
     old: 'https://classic.star.vote',
