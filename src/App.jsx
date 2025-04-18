@@ -14,8 +14,9 @@ export const autoRedirectDelay = 0; // we'll set this to 0 later
 
 export default () => {
     let parts = window.location.href.split(/star.vote|localhost:3000/);
-    if(parts.length >= 2){
-        window.location.href = `https://classic.star.vote/${parts[1].replace('/','')}`;
+    let slug = parts.length >=2 ? parts[1].replace('/','') : ''
+    if(slug.length > 0){
+        window.location.href = `https://classic.star.vote/${slug}`;
         return <></>
     }
     return <Prompt/>
