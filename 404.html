@@ -1,7 +1,7 @@
 <html>
     <head>
         <script>
-            let parts = window.location.href.replaceAll('/',' ').trim().replaceAll(' ', '/').split('/');
+            let parts = window.location.href.replaceAll('\/',' ').trim().replaceAll(' ', '\/').split('\/');
             window.location.href = `https://classic.star.vote/${parts[parts.length-1]}`;
         </script>
     </head>
