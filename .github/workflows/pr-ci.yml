@@ -8,10 +8,9 @@
 # Actions are pinned by commit SHA rather than tag, matching the convention
 # already used elsewhere in this org and required by the zizmor audit.
 #
-# `npm install`, not `npm ci`: package-lock.json is out of sync with
-# package.json on the default branch ("Missing: fsevents@2.3.3 from lock
-# file"), so `npm ci` fails outright. Regenerating and committing the lockfile
-# would let this move back to `npm ci`.
+# `npm ci`, now that package-lock.json is back in sync with package.json.
+# It was missing fsevents@2.3.3, which made `npm ci` fail outright; this PR
+# regenerates it.
 #
 # NODE_OPTIONS=--openssl-legacy-provider: webpack 4 hashing vs OpenSSL 3.
 #
@@ -48,7 +47,7 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build
         env:
